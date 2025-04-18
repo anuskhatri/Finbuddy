@@ -1,9 +1,7 @@
 const axios = require('axios')
 
 const base_url=process.env.STOCK_APP_BASE_URL
-const getStockTotal = async (token) => {
-    console.log("token: ",token);
-    
+const getStockTotal = async (token) => {    
     try {
         const userInvestment = await axios.post(`${base_url}/fetch_portfolio`,{userauth:token})
         return userInvestment.data

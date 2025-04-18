@@ -18,7 +18,6 @@ const mutualFundsPrompt = async (req, res) => {
     // Get AI-generated structured response
     const promptResult = await mutualFundsGpt(userInput);
 
-    console.log("Prompt Result:", promptResult);
 
     // Ensure promptResult.message is parsed correctly from JSON string
     let queryData = null;

@@ -55,7 +55,6 @@ const stockAnalysePrompt = async (userId, stockId) => {
       "EX",
       1800
     );
-    console.log(gptResponse);
     return gptResponse;
   } catch (error) {
     console.error(error);

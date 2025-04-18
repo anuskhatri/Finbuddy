@@ -39,7 +39,6 @@ const getUserMutualFunds = async (userId) => {
       },
     })
   );
-  console.log(totalInvestedAmount);
   return {
     investment_details: investmentDetails.rows,
     totals: {

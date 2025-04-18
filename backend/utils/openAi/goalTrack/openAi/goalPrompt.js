@@ -24,15 +24,13 @@ Now, based on the following input, provide a similar structured response:
       // Attempt to parse the assistant's response as JSON
       let structuredResponse;
       try {
-        structuredResponse = JSON.parse(assistantResponse);
+        const cleaned = assistantResponse.replace(/```(?:json)?|```/g, '').trim();
+        structuredResponse = JSON.parse(cleaned);
       } catch (error) {
-        throw new Error("Failed to parse response as JSON.");
+        console.error("Failed to parse response as JSON:", error);
       }
 
-      return {
-        role: "assistant",
-        content: structuredResponse
-      };
+      return structuredResponse
     } else {
       throw new Error("No response candidates found.");
     }

@@ -7,7 +7,6 @@ const { getFinancialAdvice } = require("../../utils/openAi/chatbot/chatBot");
 
 const investementPrompt = async (req, res) => {
   try {
-    console.log("flrjgjrel");
     const token = req.headers.userauth;
     const { userInput } = req.params;
     const decodeData = getUserid(token);

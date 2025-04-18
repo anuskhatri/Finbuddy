@@ -4,7 +4,6 @@ const genAI = new GoogleGenerativeAI("AIzaSyDG97iy2kn396yPXZNJ6s3bHI4bOXmtGpI");
 
 const getFinancialAdvice = async (prompt, data) => {
   try {
-    console.log("logggggggggggggggg");
     // Retrieve the model object
     const model = await genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -15,8 +14,6 @@ const getFinancialAdvice = async (prompt, data) => {
       )}. Currency: INR. Limit the response to a few sentences.`
     );
 
-    console.log("MOdle :", model);
-    console.log("MOdle :", result);
     // Check for response candidates and clean the response text
     if (result?.response?.candidates && result.response.candidates.length > 0) {
       let responseText = result.response.candidates[0].content.parts[0].text;

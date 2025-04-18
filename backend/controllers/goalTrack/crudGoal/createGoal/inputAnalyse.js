@@ -9,11 +9,10 @@ const inputAnalyse = async (req, res) => {
         }
 
         const gptRes = await GoalTrack(userInput)
-
+        
         // Extract the JSON part from gptRes
-        const jsonString = gptRes.match(/\{[^]*\}/) // Matches the JSON object part
 
-        if (!jsonString) {
+        if (!gptRes) {
             return res.status(200).send({
                 "goal_amount": 0,
                 "time_frame": 0,
@@ -23,7 +22,7 @@ const inputAnalyse = async (req, res) => {
 
         let responseObject
         try {
-            responseObject = JSON.parse(jsonString[0])
+            responseObject = gptRes
         } catch (error) {
             console.error("Error parsing JSON:", error)
             return res.status(500).send({ error: "Error parsing JSON response from GPT" })

@@ -86,7 +86,6 @@ const mutualFundsGpt = async (userQuery) => {
     });
 
     // Log the full response
-    console.log(response.message.content + "fdvdv");
     return response.message.content;
   } catch (error) {
     // Handle errors gracefully
@@ -96,6 +95,3 @@ const mutualFundsGpt = async (userQuery) => {
     );
   }
 };
-console.console.log(response.message.contentS);
-
-// Call the async function
